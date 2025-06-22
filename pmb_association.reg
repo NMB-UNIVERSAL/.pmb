@@ -1,0 +1,20 @@
+Windows Registry Editor Version 5.00
+
+; PMB file association
+[HKEY_CLASSES_ROOT\.pmb]
+@="PMBImageFile"
+"Content Type"="application/x-pmb"
+
+[HKEY_CLASSES_ROOT\PMBImageFile]
+@="PMB Image File"
+
+[HKEY_CLASSES_ROOT\PMBImageFile\DefaultIcon]
+@="C:\\Users\\DELL\\Documents\\code\\.pmb\\pmb_icon.ico,0"
+
+[HKEY_CLASSES_ROOT\PMBImageFile\shell]
+
+[HKEY_CLASSES_ROOT\PMBImageFile\shell\open]
+@="Open with PMB Viewer"
+
+[HKEY_CLASSES_ROOT\PMBImageFile\shell\open\command]
+@="\"C:\\Users\\DELL\\Documents\\code\\.pmb\\dist\\pmb_viewer.exe\" \"%1\"" 

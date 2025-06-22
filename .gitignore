@@ -1,0 +1,6 @@
+/dist
+/__pycache__
+/images_test
+create_icon.py
+/react-pmb-converter/build
+/react-pmb-converter/node_modules
