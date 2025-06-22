@@ -1,73 +1,42 @@
-# PMB Image Viewer & Web Converter
+# PMB Image
 
-This is a custom image viewer and web-based converter for the .pmb file format.
+A new picture file format that made in python
 
-## Setup
+## What is PMB?
 
-Run the setup script to prepare your environment:
+PMB is a custom image file format that stores:
+- The image name on the first line
+- Width and height dimensions on the second line
+- RGB pixel data for each pixel with an "N" marking the end of each row
 
-```
-python setup.py
-```
+## Features
 
-This will:
-1. Create necessary directories
-2. Generate a PMB file icon
-3. Check and install Flask if needed
-4. Check and install PyInstaller if needed
+- Convert any image format (PNG, JPG, JPEG, etc.) to PMB format
+- Client-side only processing (no server required)
+- Simple and intuitive user interface
+- Instant conversion and download
 
-## Web Converter
+## How to Install and Run
 
-The web converter allows you to upload images through a browser interface and convert them to PMB format.
+1. Convert images from any type to .pmb by visiting this site, "https://pmb-converter.netlify.app/"
 
-### Running the Web Converter
+2. Once installed install the latest release of the .pmb viewer form the releases page, and extract it and palce it anyhwere
 
-**Option 1: Run directly with Python**
-1. Double-click `run_web_converter.bat`
-2. Open your browser and go to http://localhost:5000
+3. Within the zip you downloaded double click the pmb_association.reg
 
-**Option 2: Run packaged executable**
-1. Build the web converter: Double-click `build_web_converter.bat`
-2. Once built, run with `launch_web_converter.bat`
-3. Your browser will automatically open to http://localhost:5000
+4. Once all is done and you converted a pciture you cna open it by double clicking
 
-With either option:
-1. Upload any image (PNG, JPG, JPEG, etc.)
-2. Download the converted PMB file
 
-## PMB Viewer Setup
+## Technical Details
 
-To enable double-clicking PMB files to open them:
+The conversion process works by:
+1. Loading the image into a canvas element
+2. Reading the pixel data from the canvas
+3. Formatting the data according to the PMB specification
+4. Creating a downloadable text file with the PMB content
 
-1. Build the standalone viewer: `pyinstaller --onefile --noconsole --name pmb_viewer main.py`
-2. Double-click the `pmb_association.reg` file to add the PMB file association to your Windows Registry
-3. Click "Yes" when Windows asks for confirmation
-4. Now you can double-click any .pmb file to open it with the viewer
+All processing is done client-side in the browser using JavaScript, without any backend server requirements.
 
-## Custom Icon
+## License
 
-The setup process creates a custom icon for .pmb files. After applying the registry settings, your .pmb files should display with this icon in Windows Explorer.
-
-## Manual Usage
-
-If you prefer not to use the registry association, you can run the viewer from the command line:
-```
-python main.py your_file.pmb
-```
-Or with the executable:
-```
-dist\pmb_viewer.exe your_file.pmb
-```
-
-## Troubleshooting
-
-If the file association doesn't work:
-
-1. Make sure the path to the executable in the registry file matches where PyInstaller created it
-2. Verify that the icon file exists at the specified path
-3. You might need to restart your file explorer or computer for the changes to take effect
-
-For web converter issues:
-1. Make sure the templates folder is in the same directory as the executable
-2. Check that ports aren't blocked by your firewall or antivirus
-3. The uploads and pmb_files folders will be created in the same directory as the executable 
+MIT 
