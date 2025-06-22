@@ -1,4 +1,5 @@
 /dist
+pmb viewer -v1.zip
 /__pycache__
 /images_test
 create_icon.py
